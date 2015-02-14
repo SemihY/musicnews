@@ -1,0 +1,82 @@
+
+
+<head>
+  <title>musicnews</title>
+  <script src="http://jwpsrv.com/library/nuP2itLWEeKtTyIACqoQEQ.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		  {{> bootstrap}}
+  	</div>
+</body>
+
+<template name="addsong">
+		{{#if controlMessage}}
+		<div class="alert alert-warning" role="alert" id="alert">Invalid Input</div>
+		{{/if}}
+		<div class="row">
+		  <div class="col-lg-4">
+		      <input type="text" class="form-control" id="songname" placeholder="Song Name">
+		  </div>
+		  <div class="col-lg-4">
+		      <input type="text" class="form-control" id="singername" placeholder="Singer Name">
+		   </div>
+		   <div class="col-lg-4">   
+		      <button class="btn btn-default" type="button" id="addbutton">ADD</button>
+		      <button class="btn btn-default" type="button" id="closebutton">Close</button>
+		  </div>
+		</div>
+</template>
+
+<template name="comments">
+
+
+
+</template>
+
+<template name="listSong">
+		<p></p>
+		<div class="list-group">
+		  {{#each song}}
+				  <a class="list-group-item">
+				  	<a class="upButton"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+				    {{songName}} : {{singerName}}
+				    <a class="playButton"><span class="glyphicon glyphicon-play-circle"></span></a>
+				    <span class="badge">{{songRank}}</span>
+				    {{#if isPlayingSong}}
+				    	{{>video}}
+				    {{else}}
+				    	{{clearVideo}}
+				    {{/if}}
+				  </a>
+		   {{/each}}
+		</div>
+</template>
+
+<template name="bootstrap">
+	  <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Favorites</a></li>
+            <li role="presentation"><a href="#">Chat</a></li>
+            {{#if currentUser}}
+			  <li class="addsong" role="presentation"><a href="#">Add Song</a></li>
+			{{/if}}
+            <li role="presentation"><a>{{> loginButtons}}</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Music News</h3>
+      </div>
+      {{#if songadd}}
+       {{>addsong}}
+      {{/if}}
+
+      {{>listSong}}
+
+</template>
+
+<template name="video">
+	<div id='{{selectedSongId}}'></div>
+</template>
