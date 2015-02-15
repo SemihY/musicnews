@@ -1,0 +1,19 @@
+<template name="listSong">
+		<p></p>
+		<div class="list-group">
+		  {{#each song}}
+				  <a class="list-group-item">
+				  	<a class="upButton"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+				    {{songName}} : {{singerName}}
+				    <a class="playButton"><span class="glyphicon glyphicon-play-circle"></span></a>
+				    <span class="badge">{{songRank}}</span>
+				    {{#if isPlayingSong}}
+				    	{{>video}}
+				    {{else}}
+				    	{{clearVideo}}
+				    {{/if}}
+				  </a>
+		   {{/each}}
+		</div>
+</template>
+

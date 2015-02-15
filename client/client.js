@@ -88,20 +88,19 @@ if (Meteor.isClient) {
 
 ///////////////////
 
-//Part Of Bootstrap
+//Part Of header
 
-  Template.bootstrap.helpers({
+  Template.header.helpers({
   	'songadd':function(){
   	return Session.get('songmustbeadd')?true:false;
-  	}
+  	}    
   });
 
 
-  Template.bootstrap.events({
+  Template.header.events({
   	'click .addsong':function(){
   		Session.set('songmustbeadd',true);
   	}
-
   });
 
 

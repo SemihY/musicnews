@@ -1,0 +1,16 @@
+<template name="addsong">
+		{{#if controlMessage}}
+		<div class="alert alert-warning" role="alert" id="alert">Invalid Input</div>
+		{{/if}}
+
+		<form class="form-inline">
+		  <div class="form-group">
+		    <input type="text" class="form-control" id="songname" placeholder="Song Name">
+		  </div>
+		  <div class="form-group">
+		    <input type="text" class="form-control" id="singername" placeholder="Singer Name">
+	  		</div>
+	  		  <button class="btn btn-primary" type="button" id="addbutton">ADD</button>
+		      <button class="btn btn-danger" type="button" id="closebutton">Close</button>
+		</form>
+</template>
