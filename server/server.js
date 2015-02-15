@@ -4,7 +4,7 @@ if (Meteor.isServer) {
 
 	YoutubeApi.authenticate({
     type: 'key',
-    key: 'KEY' // <-- This field for YOUTUBE API key
+    key: 'AIzaSyB8ktJ_V9t8auYF1JlV7kIqNzXlMofUEUQ' // <-- This field for YOUTUBE API key
 	});
 
 
